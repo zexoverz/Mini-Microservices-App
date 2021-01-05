@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 
+import CommentCreate from './CommentCreate';
+import CommentList from './CommentList';
+
 import axios from 'axios';
 
 export default function PostList() {
@@ -9,7 +12,6 @@ export default function PostList() {
     const fetchPosts = async () => {
         const res = await axios.get('http://localhost:4000/posts/');
 
-        console.log(res.data);
         setPosts(res.data);
     }
 
@@ -19,7 +21,6 @@ export default function PostList() {
     }, [posts]);
 
     const renderedPosts = Object.values(posts).map(post => {
-        console.log(post.title)
         return (
             <div
                 className="card"
@@ -28,6 +29,8 @@ export default function PostList() {
             >
                 <div className="card-body">
                     <h3>{post.title}</h3>
+                    <CommentList postId={post.id}></CommentList>
+                    <CommentCreate postId={post.id}></CommentCreate>
                 </div>
             </div>
         )

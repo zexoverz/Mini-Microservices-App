@@ -18,6 +18,7 @@ export default function PostCreate() {
 
         setTitle('');
     }
+    
     return (
         <div >
             <form onSubmit={onSubmit} >

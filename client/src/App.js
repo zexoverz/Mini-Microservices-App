@@ -5,7 +5,7 @@ import PostList from './components/PostList';
 
 function App() {
   return (
-    <div className="App-content">
+    <div className="App-content container col-9 ">
       <h1>Blog App</h1>
       <PostCreate></PostCreate>
       <hr></hr>
