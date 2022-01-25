@@ -10,15 +10,15 @@ export default function PostList() {
 
 
     const fetchPosts = async () => {
-        const res = await axios.get('http://localhost:4000/posts/');
-
+        const res = await axios.get('http://localhost:4002/posts/');
+        console.log(res.data)
         setPosts(res.data);
-    }
+    } 
 
 
     useEffect(() => {
         fetchPosts()
-    }, [posts]);
+    }, []);
 
     const renderedPosts = Object.values(posts).map(post => {
         return (
@@ -29,7 +29,7 @@ export default function PostList() {
             >
                 <div className="card-body">
                     <h3>{post.title}</h3>
-                    <CommentList postId={post.id}></CommentList>
+                    <CommentList comments={post.comments}></CommentList>
                     <CommentCreate postId={post.id}></CommentCreate>
                 </div>
             </div>
