@@ -13,6 +13,8 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+console.log('test')
+
 // temp database
 const posts = {};
 
