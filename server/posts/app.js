@@ -13,8 +13,6 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
-console.log('test')
-
 // temp database
 const posts = {};
 
@@ -55,5 +53,6 @@ app.post('/events', (req, res) => {
 
 
 app.listen(4000, () => {
+    console.log('v55')
     console.log('Post Service Listening on 4000')
 })
