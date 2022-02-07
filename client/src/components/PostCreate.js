@@ -12,7 +12,7 @@ export default function PostCreate() {
             return;
         }
 
-        await axios.post('http://posts.com/posts/', {
+        await axios.post('http://posts.com/posts/create', {
             title
         });
 
